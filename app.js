@@ -10,3 +10,9 @@ toggleBtn.addEventListener("click", () => {
     isDark ? "Switch to light mode" : "Switch to dark mode",
   );
 });
+
+// ---- EMAIL JS INITIALIZATION ----
+emailjs.init("iEALhfO_EbpoScgqB");
+
+
+

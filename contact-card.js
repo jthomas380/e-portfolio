@@ -100,7 +100,7 @@
     if (e.key === "Escape" && !overlay.hasAttribute("hidden")) closeCard();
   });
 
-  // Build and open the mailto link on submit
+  // Send email via EmailJS on submit
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!validateForm()) return;
@@ -108,21 +108,23 @@
     var name = document.getElementById("contact-name").value.trim();
     var email = document.getElementById("contact-email").value.trim();
     var message = document.getElementById("contact-message").value.trim();
-    var to = "JEThomas1130@gmail.com"; // Replace with your email address
 
-    var subject = encodeURIComponent("Portfolio Contact from " + name);
-    var body = encodeURIComponent(
-      "Name: " +
-        name +
-        "\n" +
-        "Email: " +
-        email +
-        "\n\n" +
-        "Message:\n" +
-        message,
+    var templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    emailjs.send("service_28o5fd5", "template_lif18tk", templateParams).then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Message sent successfully! I'll get back to you soon.");
+        closeCard();
+      },
+      function (error) {
+        console.log("FAILED...", error);
+        alert("Failed to send message. Please try again later.");
+      },
     );
-
-    window.location.href =
-      "mailto:" + to + "?subject=" + subject + "&body=" + body;
   });
 })();
