@@ -23,7 +23,7 @@ span {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 p {
@@ -154,8 +154,6 @@ nav {
   isolation: isolate;
 }
 
-
-
 #about-me > nav,
 #about-me > .flex {
   position: relative;
@@ -232,10 +230,12 @@ html.body--dark video {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  margin-left: 44px;
+  position: relative;
   animation: animate-profile-picture 800ms 200ms backwards;
 }
 
@@ -253,16 +253,47 @@ html.body--dark video {
 
 .about-me__picture {
   width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  padding: 0;
+}
 
-  /* Improving my own picture */
-  transform: scale(1);
-  padding-top: 0px;
-  padding-bottom: 10px;
+.about-me__picture--dark {
+  display: none;
+}
+
+html.body--dark .about-me__picture--light {
+  display: none;
+}
+
+html.body--dark .about-me__picture--dark {
+  display: block;
+}
+
+.wave {
+  position: absolute;
+  bottom: 16px;
+  right: -8px;
+  font-size: 28px;
+  display: inline-block;
+  animation: animate-wave 900ms infinite ease-in-out;
 }
 
 .about-me__info--title {
   margin-bottom: 16px;
   animation: fade-up 650ms 400ms backwards;
+}
+.about-me__info--job-title {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  font-size: 18px;
+  margin-bottom: 1px;
+  margin-left: 7%;
+  animation: fade-up 650ms 500ms backwards;
 }
 .about-me__info--para {
   font-size: 20px;
@@ -338,11 +369,6 @@ html.body--dark video {
   100% {
     opacity: 1;
   }
-}
-
-.wave {
-  display: inline-block;
-  animation: animate-wave 900ms infinite ease-in-out;
 }
 
 @keyframes animate-wave {
@@ -603,239 +629,5 @@ footer {
   .project__description--sub-title {
     text-align: center;
     margin: 12px 0;
-  }
-}
-
-/* ========================================
-   CONTACT CARD
-======================================== */
-
-.contact-card__overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 24px;
-  overflow: hidden;
-}
-
-.contact-card__overlay[hidden] {
-  display: none;
-}
-
-.contact-card {
-  position: relative;
-  background-color: #ffffff;
-  color: #242424;
-  border-radius: 12px;
-  padding: 48px 40px 40px;
-  width: 100%;
-  max-width: 520px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: contact-card-enter 3.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes contact-card-enter {
-  0% {
-    transform: translateX(-150vw) scale(1);
-    opacity: 0;
-  }
-  6% {
-    transform: translateX(-150vw) scale(1);
-    opacity: 1;
-  }
-  20% {
-    transform: translateX(-150vw) scale(1);
-    opacity: 1;
-  }
-  84% {
-    transform: translateX(150vw) scale(1);
-    opacity: 1;
-  }
-  85% {
-    transform: translateX(150vw) scale(1);
-    opacity: 0;
-  }
-  86% {
-    transform: translateX(0) scale(0.8);
-    opacity: 0;
-  }
-  89% {
-    transform: translateX(0) scale(0.8);
-    opacity: 1;
-  }
-  94% {
-    transform: translateX(0) scale(2);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .contact-card {
-    animation: none;
-  }
-}
-
-.contact-card__close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
-  padding: 6px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #242424;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    color 200ms ease,
-    background-color 200ms ease;
-}
-
-.contact-card__close:hover {
-  color: #4169e1;
-  background-color: rgba(65, 105, 225, 0.1);
-}
-
-.contact-card__close svg {
-  width: 20px;
-  height: 20px;
-}
-
-.contact-card__title {
-  font-size: 28px;
-  font-weight: 700;
-  color: #4169e1;
-  margin-bottom: 12px;
-}
-
-.contact-card__message {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #555555;
-  margin-bottom: 28px;
-}
-
-.contact-card__form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact-card__field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.contact-card__label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #242424;
-}
-
-.contact-card__input {
-  padding: 10px 14px;
-  border: 1.5px solid #d0d0d0;
-  border-radius: 8px;
-  font-size: 15px;
-  color: #242424;
-  background-color: #fafafa;
-  transition:
-    border-color 200ms ease,
-    box-shadow 200ms ease;
-  outline: none;
-  font-family: inherit;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.contact-card__input:focus {
-  border-color: #4169e1;
-  box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.15);
-  background-color: #ffffff;
-}
-
-.contact-card__input--textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-card__input--error {
-  border-color: #e53e3e;
-  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
-}
-
-.contact-card__error {
-  font-size: 12px;
-  color: #e53e3e;
-  min-height: 16px;
-}
-
-.contact-card__submit {
-  padding: 12px 28px;
-  background-color: #4169e1;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  align-self: flex-start;
-  transition:
-    background-color 300ms ease,
-    transform 150ms ease;
-  font-family: inherit;
-  text-decoration: none;
-}
-
-.contact-card__submit:hover {
-  background-color: #274cdb;
-}
-
-.contact-card__submit:active {
-  transform: scale(0.97);
-}
-
-@media (max-width: 768px) {
-  .about-me__info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-me__info--container {
-    align-items: center;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .about-me__links {
-    justify-content: center;
-  }
-
-  .about-me__picture--mask {
-    order: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-card {
-    padding: 40px 24px 32px;
-  }
-
-  .contact-card__title {
-    font-size: 22px;
   }
 }
