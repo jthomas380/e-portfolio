@@ -11,8 +11,4 @@ toggleBtn.addEventListener("click", () => {
   );
 });
 
-// ---- EMAIL JS INITIALIZATION ----
-emailjs.init("iEALhfO_EbpoScgqB");
-
-
 

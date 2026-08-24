@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jason E. Thomas</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./matrix-rain.css" />
     <script
       src="https://kit.fontawesome.com/796bb10e64.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "iEALhfO_EbpoScgqB",
-      });
-   })();
-</script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "iEALhfO_EbpoScgqB",
+        });
+      })();
+    </script>
   </head>
 
   <body>
@@ -154,7 +156,7 @@
       <div class="container">
         <div class="row">
           <h1 class="section__title">
-            This is my <span class="text--blue ">technology stack</span>
+            This is my <span class="text--blue">technology stack</span>
           </h1>
           <div class="language__list">
             <div class="language">
@@ -363,6 +365,20 @@
         </div>
       </div>
     </section>
+
+    <!-- -------- MATRIX RAIN -------- -->
+    <canvas
+      id="matrix-rain"
+      class="matrix-rain"
+      data-matrix-rain
+      data-matrix-active-class="body--dark"
+      data-matrix-color="#00ff41"
+      data-matrix-font-size="16"
+      data-matrix-direction="both"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- -------- FOOTER -------- -->
     <footer>
       <div class="row footer__row">
         <a href="#" class="footer__anchor">
@@ -414,7 +430,7 @@
       </div>
     </footer>
 
-    <!-- CONTACT CARD -->
+    <!--------- CONTACT CARD -------->
     <div
       class="contact-card__overlay"
       id="contact-card-overlay"
@@ -492,7 +508,7 @@
               autocomplete="email"
               required
               aria-required="true"
-              placeholder="you@example.com"
+              placeholder="your@example.com"
             />
             <span
               class="contact-card__error"
@@ -526,7 +542,8 @@
       </article>
     </div>
 
-    <script src="./app I think she hurt me on.js"></script>
+    <script src="./app.js"></script>
+    <script src="./matrix-rain.js"></script>
     <script src="./contact-card.js"></script>
   </body>
 </html>

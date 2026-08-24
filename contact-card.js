@@ -123,7 +123,9 @@
       },
       function (error) {
         console.log("FAILED...", error);
-        alert("Failed to send message. Please try again later.");
+        alert(
+          "Failed to send message. I can be reached directly by text or email at jethomas1130@gmail.com or 904-505-1019.",
+        );
       },
     );
   });

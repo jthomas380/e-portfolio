@@ -147,9 +147,20 @@ nav {
   width: auto;
 }
 
-/* ========================================
-   THEME TOGGLE
-======================================== */
+/*-------- THEME TOGGLE -------- */
+
+#about-me {
+  position: relative;
+  isolation: isolate;
+}
+
+
+
+#about-me > nav,
+#about-me > .flex {
+  position: relative;
+  z-index: 1;
+}
 
 .theme-toggle {
   display: flex;
@@ -192,7 +203,7 @@ html.body--dark video {
   filter: invert(1) hue-rotate(180deg);
 }
 
-/* ABOUT ME */
+/*----- ABOUT ME ------*/
 
 #about-me {
   min-height: 100vh;
@@ -202,16 +213,19 @@ html.body--dark video {
 
 .about-me__info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+  justify-content: space-between;
 }
 
 .about-me__info--container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+  max-width: 550px;
 }
 
 .about-me__picture--mask {
@@ -220,6 +234,7 @@ html.body--dark video {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
   margin-bottom: 28px;
   animation: animate-profile-picture 800ms 200ms backwards;
 }
@@ -286,7 +301,7 @@ html.body--dark video {
 
 .about-me__links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: clamp(10px, 2.5vw, 20px);
   flex-wrap: wrap;
@@ -791,6 +806,28 @@ footer {
 
 .contact-card__submit:active {
   transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+  .about-me__info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me__info--container {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .about-me__links {
+    justify-content: center;
+  }
+
+  .about-me__picture--mask {
+    order: 0;
+  }
 }
 
 @media (max-width: 600px) {
