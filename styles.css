@@ -220,10 +220,10 @@ html.body--dark video {
 .about-me__info--container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   flex: 1;
-  max-width: 550px;
+  max-width: none;
 }
 
 .about-me__picture--mask {
@@ -234,7 +234,7 @@ html.body--dark video {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
   margin-bottom: 24px;
-  margin-left: 44px;
+  margin-left: 0;
   position: relative;
   animation: animate-profile-picture 800ms 200ms backwards;
 }
@@ -289,10 +289,10 @@ html.body--dark .about-me__picture--dark {
 .about-me__info--job-title {
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   font-size: 18px;
   margin-bottom: 1px;
-  margin-left: 7%;
+  margin-left: 0;
   animation: fade-up 650ms 500ms backwards;
 }
 .about-me__info--para {
@@ -332,7 +332,7 @@ html.body--dark .about-me__picture--dark {
 
 .about-me__links {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: clamp(10px, 2.5vw, 20px);
   flex-wrap: wrap;
@@ -508,6 +508,110 @@ html.body--dark .about-me__picture--dark {
   margin-right: 16px;
 }
 
+.project--carousel .project__carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1800 / 838;
+  overflow: hidden;
+  background: #1c1d25;
+}
+
+.project--carousel .project__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: none;
+  filter: none;
+  transition: opacity 300ms ease;
+}
+
+.project--carousel .project__img.is-active {
+  opacity: 1;
+}
+
+.project--carousel .project__carousel-control {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(28, 29, 37, 0.82);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.project--carousel .project__carousel-control--previous {
+  left: 16px;
+}
+
+.project--carousel .project__carousel-control--next {
+  right: 16px;
+}
+
+.project--carousel .project__carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 20px;
+  background: rgba(28, 29, 37, 0.82);
+  transform: translateX(-50%);
+}
+
+.project--carousel .project__carousel-dot {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.project--carousel .project__carousel-dot::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  content: "";
+}
+
+.project--carousel .project__carousel-dot[aria-current="true"]::before {
+  background: #ffc107;
+}
+
+.project--carousel .project__carousel-status {
+  position: absolute;
+  right: 18px;
+  bottom: 20px;
+  z-index: 4;
+  padding: 5px 9px;
+  border-radius: 20px;
+  color: #fff;
+  background: rgba(28, 29, 37, 0.82);
+  font-size: 13px;
+}
+
+.project--carousel .project__carousel-control:focus-visible,
+.project--carousel .project__carousel-dot:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 3px;
+}
+
 .project__description--title,
 .project__description--sub-title,
 .project__description--para,
@@ -618,6 +722,39 @@ footer {
   .project__description--links {
     display: flex;
     justify-content: center;
+  }
+
+  .project--carousel .project__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project--carousel .project__wrapper:before {
+    display: none;
+  }
+
+  .project--carousel .project__description {
+    position: static;
+    width: 100%;
+    max-width: none;
+    padding: 20px 18px;
+    background: #1c1d25;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .project--carousel .project__description--title {
+    font-size: 28px;
+  }
+
+  .project--carousel .project__description--para {
+    display: block;
+  }
+
+  .project--carousel .project__carousel-status {
+    right: 12px;
+    bottom: 18px;
   }
 
   .project__description--title {
