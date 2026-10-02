@@ -80,7 +80,7 @@ li {
 }
 .row {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 12px;
 }
@@ -102,7 +102,7 @@ section:nth-child(even) {
 nav {
   height: 100px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -431,16 +431,18 @@ html.body--dark .about-me__picture--dark {
 
 /* PROJECTS */
 
-.project {
-  margin-bottom: 135px;
+#projects .row {
+  max-width: 1400px;
 }
 
-.project:last-child {
-  margin-bottom: 40px;
+.project {
+  min-width: 0;
 }
 
 .project__img {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   transition: all 500ms ease;
 }
 
@@ -479,15 +481,19 @@ html.body--dark .about-me__picture--dark {
 }
 
 .project__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 24px;
   padding-top: 40px;
 }
 
 .project__description {
   position: absolute;
   top: 50%;
-  left: 90px;
+  left: 20px;
   transform: translateY(100%);
-  max-width: 550px;
+  width: calc(100% - 40px);
+  max-width: none;
   z-index: 3;
   opacity: 0;
   transition:
@@ -496,22 +502,27 @@ html.body--dark .about-me__picture--dark {
 }
 
 .project__description--title {
-  font-size: 40px;
+  font-size: 24px;
+}
+
+.project__description--sub-title {
+  font-size: 13px;
 }
 
 .project__description--para {
-  margin: 16px 0;
+  margin: 10px 0;
+  font-size: 13px;
 }
 
 .project__description--link {
-  font-size: 20px;
-  margin-right: 16px;
+  font-size: 18px;
+  margin-right: 12px;
 }
 
 .project--carousel .project__carousel {
   position: relative;
   width: 100%;
-  aspect-ratio: 1800 / 838;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #1c1d25;
 }
@@ -638,7 +649,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8% 0;
+  padding: 40px 0;
 }
 
 .footer__logo--img {
@@ -672,7 +683,7 @@ footer {
 }
 
 /* Small phones, tablets, large smartphones */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   nav {
     height: 68px;
   }
@@ -690,12 +701,16 @@ footer {
   }
 
   .project__description--para {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .project__description {
-    left: 30px;
-    padding-right: 30px;
+    left: 16px;
+    width: calc(100% - 32px);
+  }
+
+  .project__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -707,6 +722,11 @@ footer {
 
   .project__wrapper {
     border-radius: 0;
+  }
+
+  .project__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
 
   .project__description {

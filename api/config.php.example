@@ -1,0 +1,136 @@
+<?php
+declare(strict_types=1);
+
+// Copy this file to api/config.php on the server and replace every placeholder.
+const DB_HOST = 'localhost';
+const DB_NAME = 'CHANGE_ME_DATABASE_NAME';
+const DB_USER = 'CHANGE_ME_DATABASE_USER';
+const DB_PASS = 'CHANGE_ME_DATABASE_PASSWORD';
+const SITE_URL = 'https://jet380.com';
+const NOTIFY_TO = 'JEThomas1130@gmail.com';
+const SMTP_HOST = 'smtp.hostinger.com';
+const SMTP_PORT = 465;
+const SMTP_USER = 'CHANGE_ME_FULL_HOSTINGER_EMAIL';
+const SMTP_PASS = 'CHANGE_ME_HOSTINGER_EMAIL_PASSWORD';
+const SMTP_FROM = 'CHANGE_ME_FULL_HOSTINGER_EMAIL';
+const SMTP_FROM_NAME = 'JET380 Portfolio Contact';
+const ADMIN_SETUP_TOKEN = 'REPLACE_WITH_A_LONG_RANDOM_SETUP_TOKEN';
+const IP_HASH_SECRET = 'REPLACE_WITH_A_RANDOM_64_CHARACTER_SECRET';
+const MAX_MESSAGES_PER_HOUR = 5;
+
+function contact_db(): PDO
+{
+    static $pdo = null;
+    if ($pdo instanceof PDO) {
+        return $pdo;
+    }
+
+    $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4';
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
+    return $pdo;
+}
+
+function json_response(int $status, array $payload): never
+{
+    http_response_code($status);
+    header('Content-Type: application/json; charset=utf-8');
+    header('Cache-Control: no-store');
+    echo json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+function client_ip_hash(): string
+{
+    return hash_hmac('sha256', (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown'), IP_HASH_SECRET);
+}
+
+function send_contact_notification(string $name, string $email, string $message): bool
+{
+    $socket = @stream_socket_client(
+        'ssl://' . SMTP_HOST . ':' . SMTP_PORT,
+        $errno,
+        $errstr,
+        12,
+        STREAM_CLIENT_CONNECT,
+    );
+    if (!$socket) {
+        return false;
+    }
+
+    stream_set_timeout($socket, 12);
+    $read = static function (array $expected) use ($socket): bool {
+        do {
+            $line = fgets($socket, 515);
+            if ($line === false) {
+                return false;
+            }
+        } while (strlen($line) >= 4 && $line[3] === '-');
+        return in_array((int) substr($line, 0, 3), $expected, true);
+    };
+    $write = static fn (string $line): bool => fwrite($socket, $line . "\r\n") !== false;
+
+    try {
+        if (!$read([220])) {
+            throw new RuntimeException('SMTP greeting');
+        }
+        $write('EHLO jet380.com');
+        if (!$read([250])) {
+            throw new RuntimeException('SMTP EHLO');
+        }
+        $write('AUTH LOGIN');
+        if (!$read([334])) {
+            throw new RuntimeException('SMTP auth');
+        }
+        $write(base64_encode(SMTP_USER));
+        if (!$read([334])) {
+            throw new RuntimeException('SMTP username');
+        }
+        $write(base64_encode(SMTP_PASS));
+        if (!$read([235])) {
+            throw new RuntimeException('SMTP password');
+        }
+        $write('MAIL FROM:<' . SMTP_FROM . '>');
+        if (!$read([250])) {
+            throw new RuntimeException('SMTP sender');
+        }
+        $write('RCPT TO:<' . NOTIFY_TO . '>');
+        if (!$read([250, 251])) {
+            throw new RuntimeException('SMTP recipient');
+        }
+        $write('DATA');
+        if (!$read([354])) {
+            throw new RuntimeException('SMTP data');
+        }
+
+        $safeName = trim(preg_replace('/[\r\n]+/', ' ', $name) ?? 'Visitor');
+        $safeEmail = trim(preg_replace('/[\r\n]+/', '', $email) ?? '');
+        $body = "New message from your portfolio contact form\r\n\r\n" .
+            "Name: {$safeName}\r\nEmail: {$safeEmail}\r\n\r\nMessage:\r\n{$message}\r\n";
+        $body = preg_replace('/\r?\n/', "\r\n", $body) ?? $body;
+        $body = preg_replace('/(^|\r\n)\./', '$1..', $body) ?? $body;
+        $headers = [
+            'From: ' . SMTP_FROM_NAME . ' <' . SMTP_FROM . '>',
+            'To: ' . NOTIFY_TO,
+            'Reply-To: ' . $safeEmail,
+            'Subject: New JET380 portfolio message',
+            'MIME-Version: 1.0',
+            'Content-Type: text/plain; charset=UTF-8',
+            'Content-Transfer-Encoding: 8bit',
+        ];
+        fwrite($socket, implode("\r\n", $headers) . "\r\n\r\n" . $body . "\r\n.\r\n");
+        if (!$read([250])) {
+            throw new RuntimeException('SMTP send');
+        }
+        $write('QUIT');
+        fclose($socket);
+        return true;
+    } catch (Throwable $error) {
+        fclose($socket);
+        error_log('Portfolio SMTP notification failed.');
+        return false;
+    }
+}
