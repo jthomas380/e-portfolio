@@ -239,6 +239,14 @@
                     >
                       1 / 3
                     </span>
+                    <button
+                      class="project__image-zoom"
+                      type="button"
+                      data-gallery-open
+                      aria-label="Zoom gallery, 3 That Doggone Cart screenshots"
+                    >
+                      Zoom gallery <span aria-hidden="true">↗</span>
+                    </button>
                   </div>
                   <div class="project__description">
                     <p class="project__role">
@@ -285,8 +293,10 @@
                   <img
                     src="./assets/nfprullc-web-page.png"
                     class="project__img"
+                    data-gallery-slide
                     alt="North Florida Property Repair & Upgrades website"
                   />
+                  <button class="project__image-zoom" type="button" data-gallery-open aria-label="Zoom North Florida Property Repair & Upgrades screenshot">Zoom image <span aria-hidden="true">↗</span></button>
                   <div class="project__description">
                     <p class="project__role">
                       Project contribution <span>·</span> Live business website
@@ -337,8 +347,10 @@
                   <img
                     src="./assets/mobile-detailing-landing-page.png"
                     class="project__img"
+                    data-gallery-slide
                     alt="Blacktop Mobile Detailing project"
                   />
+                  <button class="project__image-zoom" type="button" data-gallery-open aria-label="Zoom Blacktop Mobile Detailing screenshot">Zoom image <span aria-hidden="true">↗</span></button>
                   <div class="project__description">
                     <p class="project__role">
                       Front-end project <span>·</span> Booking demo
@@ -389,8 +401,10 @@
                   <img
                     src="./assets/north-and-loom%20web-page.png"
                     class="project__img"
+                    data-gallery-slide
                     alt="North & Loom fictional apparel storefront"
                   />
+                  <button class="project__image-zoom" type="button" data-gallery-open aria-label="Zoom North & Loom screenshot">Zoom image <span aria-hidden="true">↗</span></button>
                   <div class="project__description">
                     <p class="project__role">
                       Front-end project <span>·</span> Storefront demo
@@ -443,8 +457,10 @@
                   <img
                     src="./assets/mortage-company-demo-site.png"
                     class="project__img"
+                    data-gallery-slide
                     alt="Mortgage lender project"
                   />
+                  <button class="project__image-zoom" type="button" data-gallery-open aria-label="Zoom mortgage lender screenshot">Zoom image <span aria-hidden="true">↗</span></button>
                   <div class="project__description">
                     <p class="project__role">
                       Front-end project <span>·</span> Mortgage demo
@@ -492,8 +508,10 @@
                   <img
                     src="./assets/reel-finder-movie-carousel.png"
                     class="project__img"
+                    data-gallery-slide
                     alt="ReelFinder movie database project"
                   />
+                  <button class="project__image-zoom" type="button" data-gallery-open aria-label="Zoom ReelFinder screenshot">Zoom image <span aria-hidden="true">↗</span></button>
                   <div class="project__description">
                     <p class="project__role">
                       Front-end project <span>·</span> API-powered app
@@ -644,6 +662,21 @@
         </div>
       </section>
     </main>
+    <dialog class="project-gallery" id="project-gallery" aria-labelledby="project-gallery-title">
+      <div class="project-gallery__header">
+        <h2 id="project-gallery-title">Project screenshots</h2>
+        <button class="project-gallery__close" type="button" data-gallery-close aria-label="Close screenshot gallery">×</button>
+      </div>
+      <div class="project-gallery__viewer">
+        <button class="project-gallery__nav" type="button" data-gallery-direction="-1" aria-label="Previous screenshot">←</button>
+        <img class="project-gallery__image" src="" alt="" data-gallery-image />
+        <button class="project-gallery__nav" type="button" data-gallery-direction="1" aria-label="Next screenshot">→</button>
+      </div>
+      <div class="project-gallery__footer">
+        <p data-gallery-caption></p>
+        <span data-gallery-count aria-live="polite"></span>
+      </div>
+    </dialog>
     <footer>
       <div class="footer__inner">
         <a
