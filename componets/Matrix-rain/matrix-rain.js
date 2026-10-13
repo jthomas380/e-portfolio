@@ -67,6 +67,7 @@ class MatrixRain {
     this.previousTime = 0;
     this.canvasWidth = 0;
     this.canvasHeight = 0;
+    this.resizeObserver = null;
 
     this.draw = this.draw.bind(this);
     this.handleResize = this.handleResize.bind(this);
@@ -83,7 +84,12 @@ class MatrixRain {
       attributeFilter: ["class"],
     });
 
-    window.addEventListener("resize", this.handleResize);
+    if ("ResizeObserver" in window) {
+      this.resizeObserver = new ResizeObserver(this.handleResize);
+      this.resizeObserver.observe(this.canvas);
+    } else {
+      window.addEventListener("resize", this.handleResize);
+    }
 
     this.handleThemeChange();
   }
@@ -109,6 +115,9 @@ class MatrixRain {
 
   resize() {
     const canvasBounds = this.canvas.getBoundingClientRect();
+    if (canvasBounds.width === 0 || canvasBounds.height === 0) {
+      return;
+    }
 
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
@@ -218,7 +227,11 @@ class MatrixRain {
 
     this.themeObserver.disconnect();
 
-    window.removeEventListener("resize", this.handleResize);
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+    } else {
+      window.removeEventListener("resize", this.handleResize);
+    }
   }
 }
 
