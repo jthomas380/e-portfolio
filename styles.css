@@ -1186,34 +1186,6 @@ textarea:focus-visible {
   box-shadow: none;
 }
 
-.project__image-zoom {
-  position: absolute;
-  top: 11px;
-  right: 11px;
-  z-index: 5;
-  display: inline-flex;
-  min-height: 34px;
-  align-items: center;
-  gap: 7px;
-  padding: 0 10px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text-primary);
-  background: var(--page-bg);
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.project__image-zoom:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.project__image-zoom span {
-  color: inherit;
-}
-
 .project__wrapper::before {
   display: none;
 }
@@ -1717,100 +1689,6 @@ footer {
   text-align: left;
 }
 
-.project-gallery {
-  width: min(980px, calc(100% - 32px));
-  max-width: 980px;
-  max-height: calc(100% - 32px);
-  padding: 18px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-primary);
-  background: var(--page-bg);
-}
-
-.project-gallery::backdrop {
-  background: rgba(11, 18, 30, 0.78);
-}
-
-.project-gallery__header,
-.project-gallery__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.project-gallery__header {
-  margin-bottom: 12px;
-}
-
-.project-gallery__header h2 {
-  margin: 0;
-  color: var(--text-primary);
-  font-family: "Manrope", sans-serif;
-  font-size: 17px;
-  text-align: left;
-}
-
-.project-gallery__close {
-  width: 38px;
-  height: 38px;
-  flex: 0 0 auto;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text-primary);
-  background: transparent;
-  font-size: 24px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.project-gallery__viewer {
-  display: grid;
-  grid-template-columns: 42px minmax(0, 1fr) 42px;
-  align-items: center;
-  gap: 12px;
-}
-
-.project-gallery__image {
-  display: block;
-  width: 100%;
-  max-height: min(70vh, 680px);
-  object-fit: contain;
-  background: var(--surface-bg);
-}
-
-.project-gallery__nav {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--text-primary);
-  background: var(--page-bg);
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.project-gallery__nav[hidden] {
-  visibility: hidden;
-}
-
-.project-gallery__footer {
-  margin-top: 10px;
-}
-
-.project-gallery__footer p,
-.project-gallery__footer span {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 12px;
-}
-
-.project-gallery__footer span {
-  flex: 0 0 auto;
-}
-
 @media (max-width: 900px) {
   .nav__link--list {
     gap: 18px;
@@ -1848,22 +1726,8 @@ footer {
     width: calc(100% - 32px);
   }
 
-  .personal__logo {
-    min-width: 0;
-    max-width: calc(100% - 52px);
-  }
-
-  .personal__logo span {
-    min-width: 0;
-  }
-
-  .personal__logo strong {
-    overflow-wrap: anywhere;
-  }
-
   .nav__toggle {
     display: grid;
-    flex: 0 0 40px;
     width: 40px;
     height: 40px;
     place-items: center;
@@ -2060,26 +1924,6 @@ footer {
     padding: 15px;
     opacity: 1;
     background: var(--page-bg);
-  }
-
-  .project-gallery {
-    width: calc(100% - 20px);
-    max-height: calc(100% - 20px);
-    padding: 10px;
-  }
-
-  .project-gallery__viewer {
-    grid-template-columns: 34px minmax(0, 1fr) 34px;
-    gap: 5px;
-  }
-
-  .project-gallery__nav {
-    width: 34px;
-    height: 34px;
-  }
-
-  .project-gallery__image {
-    max-height: 65svh;
   }
 
   .footer__links {
