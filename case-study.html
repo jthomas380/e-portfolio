@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project case studies by Jason E. Thomas."
+    />
+    <title>Project Case Study | Jason E. Thomas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#case-study-content">Skip to case study</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a
+          class="personal__logo"
+          href="./index.html#work"
+          aria-label="Jason E. Thomas home"
+        >
+          <img
+            src="./assets/jet-logo-primary-updated.png"
+            alt=""
+            class="personal__logo--img"
+          />
+          <span
+            ><strong>JET</strong
+            ><small>Jason E. Thomas · Front-End Developer</small></span
+          >
+        </a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <ul class="nav__link--list" id="primary-navigation">
+          <li class="nav__link">
+            <a href="./index.html#projects" class="nav__link--anchor">Work</a>
+          </li>
+          <li class="nav__link">
+            <a href="./index.html#experience" class="nav__link--anchor"
+              >Experience</a
+            >
+          </li>
+          <li class="nav__link">
+            <a href="./index.html#about" class="nav__link--anchor">About</a>
+          </li>
+          <li class="nav__link">
+            <a
+              href="mailto:JEThomas1130@gmail.com"
+              class="nav__link--anchor nav__link--hire"
+              >Hire Me</a
+            >
+          </li>
+          <li class="nav__link nav__link--theme">
+            <button
+              class="theme-toggle"
+              type="button"
+              aria-label="Switch to dark mode"
+            >
+              <svg
+                class="theme-toggle__icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="case-study-main" id="main">
+      <a class="case-study-back" href="./index.html#projects"
+        >← Back to selected work</a
+      >
+      <article id="case-study-content" hidden>
+        <header class="case-study-header">
+          <p class="eyebrow" id="case-category"></p>
+          <h1 id="case-title"></h1>
+          <p class="case-study-header__summary" id="case-summary"></p>
+          <div class="case-study-header__meta" id="case-meta"></div>
+        </header>
+        <figure class="case-study-hero">
+          <img class="case-study-hero-image" id="case-image" alt="" />
+          <figcaption id="case-image-caption"></figcaption>
+        </figure>
+        <section
+          class="case-study-gallery-section"
+          id="case-gallery-section"
+          hidden
+          aria-labelledby="case-gallery-title"
+        >
+          <h2 class="case-study-gallery-title" id="case-gallery-title">
+            Screenshots
+          </h2>
+          <div class="case-study-gallery" id="case-gallery"></div>
+        </section>
+        <div class="case-study-layout">
+          <div class="case-study-sections" id="case-sections"></div>
+          <aside class="case-study-sidebar">
+            <h2>Technologies</h2>
+            <div class="case-study-tags" id="case-technologies"></div>
+            <h2>Project links</h2>
+            <div class="case-study-links" id="case-links"></div>
+          </aside>
+        </div>
+      </article>
+      <section class="case-study-not-found" id="case-not-found" hidden>
+        <p class="eyebrow">Case study unavailable</p>
+        <h1>This project could not be found.</h1>
+        <p>Choose a project from the selected work page.</p>
+        <a class="text-link" href="./index.html#projects"
+          >Return to selected work <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer__inner">
+        <a
+          class="footer__brand"
+          href="./index.html#work"
+          aria-label="Jason E. Thomas home"
+        >
+          <img src="./assets/jet-logo-primary-updated.png" alt="" />
+          <span>Jason E. Thomas</span>
+        </a>
+        <div class="footer__links">
+          <a href="mailto:JEThomas1130@gmail.com">Email</a>
+          <a
+            href="./assets/Jason Thomas Resume Frontend dev.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Résumé</a
+          >
+          <a
+            href="https://github.com/jthomas380"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+        <small>© 2026 Jason E. Thomas</small>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script src="./case-study.js"></script>
+  </body>
+</html>
