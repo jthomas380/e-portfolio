@@ -8,6 +8,36 @@
       content="Jason E. Thomas — front-end developer portfolio featuring responsive web applications and real projects."
     />
     <title>Jason E. Thomas | Front-End Developer</title>
+    <link rel="canonical" href="https://jet380.com/" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="JET380" />
+    <meta property="og:url" content="https://jet380.com/" />
+    <meta property="og:title" content="Jason E. Thomas | Front-End Developer" />
+    <meta
+      property="og:description"
+      content="Jason E. Thomas — front-end developer portfolio featuring responsive web applications and real projects."
+    />
+    <meta property="og:image" content="https://jet380.com/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="JET380 logo with Jason E. Thomas, Front-End Developer, jet380.com"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jason E. Thomas | Front-End Developer" />
+    <meta
+      name="twitter:description"
+      content="Jason E. Thomas — front-end developer portfolio featuring responsive web applications and real projects."
+    />
+    <meta name="twitter:image" content="https://jet380.com/assets/og-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="JET380 logo with Jason E. Thomas, Front-End Developer, jet380.com"
+    />
     <link rel="stylesheet" href="./portfolio.css" />
   </head>
   <body>
@@ -15,9 +45,12 @@
     <header class="header">
       <nav class="container nav" aria-label="Main navigation">
         <a class="brand" href="#home"
-          ><img src="assets/jet-logo-primary-updated.png" alt="JET logo" /><span
-            >JET380</span
-          ></a
+          ><img
+            src="assets/jet-logo-primary-updated.png"
+            width="1520"
+            height="520"
+            alt="JET380 logo"
+          /><span>JET380</span></a
         ><button
           class="menu-btn"
           id="menu"
@@ -30,7 +63,7 @@
           <a href="#projects">Projects</a><a href="#experience">Experience</a
           ><a href="#about">About</a><a href="#contact">Contact</a
           ><a
-            href="assets/Jason%20Thomas%20Resume%20Frontend%20dev.pdf"
+            href="assets/Jason-Thomas-Resume-Front-End-Developer.pdf"
             target="_blank"
             rel="noopener"
             >Résumé ↗</a
@@ -43,22 +76,17 @@
         <div class="container hero-grid">
           <div>
             <p class="eyebrow">Jason E. Thomas · Front-End Development</p>
-            <h2>Web experiences built to work.</h2>
+            <h1>Web experiences built to work.</h1>
             <p class="lead">
               I'm a front-end developer with a background in electrical
               engineering, business ownership, and technical problem-solving. I
-              build interactive web applications using JavaScript, React,
-              TypeScript, HTML, and CSS, focusing on functionality that goes
-              beyond the visual design. My projects include dynamic user
-              interfaces, real-time calculations, customer ordering systems,
-              administrative dashboards, API integrations, and automated
-              workflows. I develop interactive features that respond to user
-              actions, process information, update content dynamically, and
-              connect the front end with back-end services and databases. With
-              experience managing my own business and troubleshooting complex
-              electrical systems in the U.S. Navy, I bring a practical,
-              problem-solving mindset to software development. My goal is to
-              build applications that don't just look professional... hey
+              build interactive web applications with JavaScript, React,
+              TypeScript, HTML, and CSS, including dynamic interfaces, real-time
+              calculations, customer ordering systems, administrative
+              dashboards, API integrations, and workflows that connect the front
+              end with back-end services and databases. With experience running
+              my own business and troubleshooting electrical systems in the U.S.
+              Navy, I build applications that don't just look professional; they
               perform useful tasks, solve real problems, and deliver a
               dependable user experience.
             </p>
@@ -78,22 +106,41 @@
             ></canvas>
             <img
               src="assets/jet-logo-primary-updated.png"
-              alt="JET brand logo"
+              width="1520"
+              height="520"
+              alt="JET380 monogram and wordmark"
             />
           </div>
         </div>
       </section>
-      <div class="ticker-wrap" aria-label="Technologies I use">
-        <div class="ticker-title">Languages & technologies</div>
+      <div class="ticker-wrap">
+        <p class="ticker-title" id="tech-ticker-label">Languages &amp; technologies</p>
         <div class="ticker">
           <div class="ticker-track" id="ticker-track">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span
-            ><span>React</span><span>TypeScript</span><span>REST APIs</span
-            ><span>Git & GitHub</span><span>PHP</span><span>MySQL</span
-            ><span>Responsive UI</span><span>HTML5</span><span>CSS3</span
-            ><span>JavaScript</span><span>React</span><span>TypeScript</span
-            ><span>REST APIs</span><span>Git & GitHub</span><span>PHP</span
-            ><span>MySQL</span><span>Responsive UI</span>
+            <ul aria-labelledby="tech-ticker-label">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>REST APIs</li>
+              <li>Git &amp; GitHub</li>
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>Responsive UI</li>
+            </ul>
+            <ul aria-hidden="true">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>REST APIs</li>
+              <li>Git &amp; GitHub</li>
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>Responsive UI</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -109,9 +156,11 @@
           <div class="project-grid">
             <article class="project">
               <img
-                src="assets/thatdoggonecart-customer-facing.png"
+                src="assets/thatdoggonecart-customer-facing.webp"
+                width="1200"
+                height="560"
                 loading="lazy"
-                alt="That Doggone Cart screenshot"
+                alt="That Doggone Cart ordering page with a cart-dog hero and menu categories for hot dogs, burgers, and drinks"
               />
               <div class="project-info">
                 <p class="eyebrow">Ordering and kitchen operations</p>
@@ -133,9 +182,11 @@
             </article>
             <article class="project">
               <img
-                src="assets/nfprullc-web-page.png"
+                src="assets/nfprullc-web-page.webp"
+                width="1200"
+                height="550"
                 loading="lazy"
-                alt="North Florida Property Repair &amp; Upgrades screenshot"
+                alt="North Florida Property Repair and Upgrades homepage with a craftsman at a workbench and links for home repairs, property upgrades, and water treatment"
               />
               <div class="project-info">
                 <p class="eyebrow">Live business website</p>
@@ -151,20 +202,17 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     >Live project ↗</a
-                  ><a
-                    href="https://github.com/jthomas380/nfpru"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub ↗</a
                   >
                 </div>
               </div>
             </article>
             <article class="project">
               <img
-                src="assets/mobile-detailing-landing-page.png"
+                src="assets/mobile-detailing-landing-page.webp"
+                width="1200"
+                height="557"
                 loading="lazy"
-                alt="Blacktop Mobile Detailing screenshot"
+                alt="Blacktop Mobile Detailing landing page with package choices, a vehicle and add-on selector, and an appointment scheduler"
               />
               <div class="project-info">
                 <p class="eyebrow">Booking experience</p>
@@ -191,9 +239,11 @@
             </article>
             <article class="project">
               <img
-                src="assets/north-and-loom web-page.png"
+                src="assets/north-and-loom-web-page.webp"
+                width="1200"
+                height="543"
                 loading="lazy"
-                alt="North &amp; Loom screenshot"
+                alt="North and Loom storefront with a dark fashion hero and navigation for shop, about, and contact"
               />
               <div class="project-info">
                 <p class="eyebrow">Storefront demo</p>
@@ -220,9 +270,11 @@
             </article>
             <article class="project">
               <img
-                src="assets/mortage-company-demo-site.png"
+                src="assets/mortage-company-demo-site.webp"
+                width="1200"
+                height="603"
                 loading="lazy"
-                alt="Mortgage Lender screenshot"
+                alt="Mortgage lender homepage with a house photo, a payment calculator, and calls to action for prequalification and rates"
               />
               <div class="project-info">
                 <p class="eyebrow">Mortgage demo</p>
@@ -249,9 +301,11 @@
             </article>
             <article class="project">
               <img
-                src="assets/reel-finder-movie-carousel.png"
+                src="assets/reel-finder-movie-carousel.webp"
+                width="1200"
+                height="599"
                 loading="lazy"
-                alt="ReelFinder Movie Database screenshot"
+                alt="ReelFinder movie search with a poster carousel and a results grid that shows titles and ratings"
               />
               <div class="project-info">
                 <p class="eyebrow">API project</p>
@@ -286,7 +340,7 @@
           <div class="timeline">
             <div>
               <strong
-                >Business Owner · North Florida Property Repair & Upgrades
+                >Business Owner · North Florida Property Repair &amp; Upgrades
                 LLC</strong
               ><small>2018–Present</small>
               <p class="text">
@@ -327,7 +381,7 @@
             </p>
             <a
               class="button ghost"
-              href="assets/Jason%20Thomas%20Resume%20Frontend%20dev.pdf"
+              href="assets/Jason-Thomas-Resume-Front-End-Developer.pdf"
               target="_blank"
               rel="noopener"
               >View résumé ↗</a
@@ -336,7 +390,7 @@
           <div>
             <h3>Education</h3>
             <p class="text">
-              B.S. in Electrical Engineering & Communication Technologies<br />ITT
+              B.S. in Electrical Engineering &amp; Communication Technologies<br />ITT
               Technical Institute · 2016
             </p>
             <h3>Focus</h3>
@@ -355,6 +409,7 @@
             I'm open to front-end development opportunities and conversations
             about building useful software.
           </p>
+          <p class="availability">Open to remote · Eastern Time</p>
           <a
             class="button"
             href="mailto:JEThomas1130@gmail.com?subject=Portfolio%20Inquiry"
@@ -367,6 +422,11 @@
             rel="noopener noreferrer"
             >GitHub ↗</a
           >
+          <!--
+            TODO: Add Jason's LinkedIn URL here when he provides it.
+            Do not publish a guessed or placeholder profile URL.
+            <a class="button ghost" href="LINKEDIN_URL" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          -->
         </div>
       </section>
     </main>
@@ -390,6 +450,6 @@
         }),
       );
     </script>
-    <script src="componets/Matrix-rain/matrix-rain.js"></script>
+    <script src="components/Matrix-rain/matrix-rain.js"></script>
   </body>
 </html>

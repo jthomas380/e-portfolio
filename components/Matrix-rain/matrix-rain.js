@@ -72,11 +72,20 @@ class MatrixRain {
     this.draw = this.draw.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.handleThemeChange = this.handleThemeChange.bind(this);
+    this.handleMotionChange = this.handleMotionChange.bind(this);
 
     this.initialize();
   }
 
   initialize() {
+    this.motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (typeof this.motionQuery.addEventListener === "function") {
+      this.motionQuery.addEventListener("change", this.handleMotionChange);
+    } else if (typeof this.motionQuery.addListener === "function") {
+      this.motionQuery.addListener(this.handleMotionChange);
+    }
+
     this.themeObserver = new MutationObserver(this.handleThemeChange);
 
     this.themeObserver.observe(document.documentElement, {
@@ -94,7 +103,15 @@ class MatrixRain {
     this.handleThemeChange();
   }
 
+  prefersReducedMotion() {
+    return Boolean(this.motionQuery && this.motionQuery.matches);
+  }
+
   isActive() {
+    if (this.prefersReducedMotion()) {
+      return false;
+    }
+
     return (
       this.alwaysActive ||
       document.documentElement.classList.contains(this.activeClass)
@@ -216,6 +233,10 @@ class MatrixRain {
     }
   }
 
+  handleMotionChange() {
+    this.handleThemeChange();
+  }
+
   handleResize() {
     if (this.isActive()) {
       this.resize();
@@ -224,6 +245,14 @@ class MatrixRain {
 
   destroy() {
     this.stop();
+
+    if (this.motionQuery) {
+      if (typeof this.motionQuery.removeEventListener === "function") {
+        this.motionQuery.removeEventListener("change", this.handleMotionChange);
+      } else if (typeof this.motionQuery.removeListener === "function") {
+        this.motionQuery.removeListener(this.handleMotionChange);
+      }
+    }
 
     this.themeObserver.disconnect();
 
