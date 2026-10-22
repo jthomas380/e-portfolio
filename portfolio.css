@@ -22,6 +22,7 @@ a {
 }
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 button {
@@ -119,8 +120,8 @@ button {
   letter-spacing: 0.15em;
   color: #2660ae;
   font-weight: 800;
-  font-size: 25px;
-  margin: 0 0 14px;
+  font-size: 13px;
+  margin: 0 0 12px;
 }
 .hero h1 {
   font-size: clamp(42px, 6vw, 76px);
@@ -194,12 +195,15 @@ button {
   );
 }
 .ticker-track {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   gap: 16px;
   width: max-content;
   animation: marquee 30s linear infinite;
 }
-.ticker-track span {
+.ticker-track li {
   flex: none;
   border: 1px solid #607da4;
   background: #ffffff13;
@@ -394,4 +398,18 @@ footer a {
     scroll-behavior: auto !important;
     animation: none !important;
   }
+}
+
+/* Keep keyboard navigation visible and section headings clear of the header. */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #185dd6;
+  outline-offset: 4px;
+}
+section[id] { scroll-margin-top: 90px; }
+.contact .button { margin: 6px; }
+.project-invoicing { grid-column: 1 / -1; background: #edf4ff; }
+@media (prefers-reduced-motion: reduce) {
+  .matrix-rain { display: none; }
+  .ticker-track [aria-hidden="true"] { display: none; }
+  .ticker-track { width: auto; flex-wrap: wrap; justify-content: center; }
 }

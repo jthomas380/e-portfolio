@@ -8,6 +8,20 @@
       content="Jason E. Thomas — front-end developer portfolio featuring responsive web applications and real projects."
     />
     <title>Jason E. Thomas | Front-End Developer</title>
+    <link rel="canonical" href="https://jet380.com/" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jet380.com/" />
+    <meta property="og:title" content="Jason E. Thomas | Front-End Developer" />
+    <meta property="og:description" content="Real business websites and practical React applications by Jason E. Thomas." />
+    <meta property="og:image" content="https://jet380.com/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="JET380 — Jason E. Thomas, Front-End Developer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://jet380.com/assets/og-image.jpg" />
     <link rel="stylesheet" href="./portfolio.css" />
   </head>
   <body>
@@ -15,7 +29,7 @@
     <header class="header">
       <nav class="container nav" aria-label="Main navigation">
         <a class="brand" href="#home"
-          ><img src="assets/jet-logo-primary-updated.png" alt="JET logo" /><span
+          ><img src="assets/jet-logo-primary-updated.png" width="1520" height="520" alt="JET logo" /><span
             >JET380</span
           ></a
         ><button
@@ -30,7 +44,7 @@
           <a href="#projects">Projects</a><a href="#experience">Experience</a
           ><a href="#about">About</a><a href="#contact">Contact</a
           ><a
-            href="assets/Jason%20Thomas%20Resume%20Frontend%20dev.pdf"
+            href="assets/Jason%20E%20Thomas%20-%20Front-End%20Developer%20Resume.pdf"
             target="_blank"
             rel="noopener"
             >Résumé ↗</a
@@ -43,24 +57,13 @@
         <div class="container hero-grid">
           <div>
             <p class="eyebrow">Jason E. Thomas · Front-End Development</p>
-            <h2>Web experiences built to work.</h2>
+            <h1>Web experiences built to work.</h1>
             <p class="lead">
-              I'm a front-end developer with a background in electrical
-              engineering, business ownership, and technical problem-solving. I
-              build interactive web applications using JavaScript, React,
-              TypeScript, HTML, and CSS, focusing on functionality that goes
-              beyond the visual design. My projects include dynamic user
-              interfaces, real-time calculations, customer ordering systems,
-              administrative dashboards, API integrations, and automated
-              workflows. I develop interactive features that respond to user
-              actions, process information, update content dynamically, and
-              connect the front end with back-end services and databases. With
-              experience managing my own business and troubleshooting complex
-              electrical systems in the U.S. Navy, I bring a practical,
-              problem-solving mindset to software development. My goal is to
-              build applications that don't just look professional... hey
-              perform useful tasks, solve real problems, and deliver a
-              dependable user experience.
+              I'm a front-end developer and U.S. Navy veteran building websites
+              and web apps for real businesses with React, JavaScript, HTML, and
+              CSS. My work includes customer ordering, invoicing, booking flows,
+              and REST API integrations. I bring electrical troubleshooting and
+              business ownership experience to building useful, dependable software.
             </p>
             <div class="cta">
               <a class="button" href="#projects">Explore my projects</a
@@ -77,7 +80,7 @@
               aria-hidden="true"
             ></canvas>
             <img
-              src="assets/jet-logo-primary-updated.png"
+              src="assets/jet-logo-primary-updated.png" width="1520" height="520"
               alt="JET brand logo"
             />
           </div>
@@ -86,15 +89,28 @@
       <div class="ticker-wrap" aria-label="Technologies I use">
         <div class="ticker-title">Languages & technologies</div>
         <div class="ticker">
-          <div class="ticker-track" id="ticker-track">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span
-            ><span>React</span><span>TypeScript</span><span>REST APIs</span
-            ><span>Git & GitHub</span><span>PHP</span><span>MySQL</span
-            ><span>Responsive UI</span><span>HTML5</span><span>CSS3</span
-            ><span>JavaScript</span><span>React</span><span>TypeScript</span
-            ><span>REST APIs</span><span>Git & GitHub</span><span>PHP</span
-            ><span>MySQL</span><span>Responsive UI</span>
-          </div>
+          <ul class="ticker-track" id="ticker-track">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>TypeScript (learning)</li>
+            <li>REST APIs</li>
+            <li>Git &amp; GitHub</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Responsive UI</li>
+            <li aria-hidden="true">HTML5</li>
+            <li aria-hidden="true">CSS3</li>
+            <li aria-hidden="true">JavaScript</li>
+            <li aria-hidden="true">React</li>
+            <li aria-hidden="true">TypeScript (learning)</li>
+            <li aria-hidden="true">REST APIs</li>
+            <li aria-hidden="true">Git &amp; GitHub</li>
+            <li aria-hidden="true">PHP</li>
+            <li aria-hidden="true">MySQL</li>
+            <li aria-hidden="true">Responsive UI</li>
+          </ul>
         </div>
       </div>
       <section class="section" id="projects">
@@ -107,9 +123,21 @@
             live projects below.
           </p>
           <div class="project-grid">
+            <article class="project project-invoicing">
+              <div class="project-info">
+                <p class="eyebrow">Business application</p>
+                <h3>NFPRU Invoicing</h3>
+                <p>
+                  A phone-first React app for making and sending invoices and
+                  estimates, managing customers, and tracking payments.
+                </p>
+                <p class="tags">React · Vite · React Router · Node.js · Express · PostgreSQL · PDFKit</p>
+                <p class="text">Built around everyday estimating and invoicing workflows.</p>
+              </div>
+            </article>
             <article class="project">
               <img
-                src="assets/thatdoggonecart-customer-facing.png"
+                src="assets/thatdoggonecart-customer-facing.webp" width="1200" height="560"
                 loading="lazy"
                 alt="That Doggone Cart screenshot"
               />
@@ -133,7 +161,7 @@
             </article>
             <article class="project">
               <img
-                src="assets/nfprullc-web-page.png"
+                src="assets/nfprullc-web-page.webp" width="1200" height="550"
                 loading="lazy"
                 alt="North Florida Property Repair &amp; Upgrades screenshot"
               />
@@ -151,18 +179,13 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     >Live project ↗</a
-                  ><a
-                    href="https://github.com/jthomas380/nfpru"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub ↗</a
                   >
                 </div>
               </div>
             </article>
             <article class="project">
               <img
-                src="assets/mobile-detailing-landing-page.png"
+                src="assets/mobile-detailing-landing-page.webp" width="1200" height="557"
                 loading="lazy"
                 alt="Blacktop Mobile Detailing screenshot"
               />
@@ -191,7 +214,7 @@
             </article>
             <article class="project">
               <img
-                src="assets/north-and-loom web-page.png"
+                src="assets/north-and-loom-web-page.webp" width="1200" height="543"
                 loading="lazy"
                 alt="North &amp; Loom screenshot"
               />
@@ -220,7 +243,7 @@
             </article>
             <article class="project">
               <img
-                src="assets/mortage-company-demo-site.png"
+                src="assets/mortgage-company-demo-site.webp" width="1200" height="603"
                 loading="lazy"
                 alt="Mortgage Lender screenshot"
               />
@@ -234,7 +257,7 @@
                 <p class="tags">HTML · CSS · JavaScript</p>
                 <div class="links">
                   <a
-                    href="https://mortage.jet380.com/"
+                    href="https://mortgage.jet380.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     >Live project ↗</a
@@ -249,7 +272,7 @@
             </article>
             <article class="project">
               <img
-                src="assets/reel-finder-movie-carousel.png"
+                src="assets/reel-finder-movie-carousel.webp" width="1200" height="599"
                 loading="lazy"
                 alt="ReelFinder Movie Database screenshot"
               />
@@ -285,31 +308,23 @@
           <h2>Experience</h2>
           <div class="timeline">
             <div>
-              <strong
-                >Business Owner · North Florida Property Repair & Upgrades
-                LLC</strong
-              ><small>2018–Present</small>
-              <p class="text">
-                Manage operations, customer relationships, estimating,
-                scheduling, and project delivery. Build websites and personal
-                coding projects alongside business ownership.
-              </p>
+              <strong>Owner · North Florida Property Repair &amp; Upgrades LLC</strong>
+              <small>2016–Present</small>
+              <p class="text">Run a licensed, insured property repair business, managing estimating,
+                scheduling, purchasing, customers, and quality control. Design, build,
+                and maintain the company website and invoicing app.</p>
             </div>
             <div>
-              <strong
-                >Front-End Development Training · Frontend Simplified</strong
-              ><small>August 2026–Present</small>
-              <p class="text">
-                Structured training and hands-on projects focused on HTML, CSS,
-                JavaScript, React, TypeScript, and responsive development.
-              </p>
+              <strong>Quality Assurance / Test Technician · IEM</strong>
+              <small>Jan 2025–Dec 2025</small>
+              <p class="text">Tested switchboards against drawings and schematics;
+                worked with engineers to fix problems and retest.</p>
             </div>
             <div>
-              <strong>U.S. Navy · Aviation Electrician’s Mate</strong>
-              <p class="text">
-                Technical troubleshooting and maintenance of electrical and
-                electronic systems in operational environments.
-              </p>
+              <strong>Aviation Electrician's Mate, QA Representative, Work-Center Supervisor · U.S. Navy</strong>
+              <small>Jul 1999–Sep 2012</small>
+              <p class="text">Diagnosed and repaired P-3 aircraft electrical systems.
+                Supervised and trained technicians, and reviewed maintenance work.</p>
             </div>
           </div>
         </div>
@@ -327,7 +342,7 @@
             </p>
             <a
               class="button ghost"
-              href="assets/Jason%20Thomas%20Resume%20Frontend%20dev.pdf"
+              href="assets/Jason%20E%20Thomas%20-%20Front-End%20Developer%20Resume.pdf"
               target="_blank"
               rel="noopener"
               >View résumé ↗</a
@@ -341,8 +356,9 @@
             </p>
             <h3>Focus</h3>
             <p class="text">
-              Responsive design, JavaScript interfaces, React and TypeScript
-              training, application workflows, and REST API integration.
+              Responsive design, JavaScript interfaces, React, application workflows,
+              and REST API integration. Learning TypeScript.<br />
+              Front-End Development Training · Frontend Simplified · Aug 2026–Present
             </p>
           </div>
         </div>
@@ -357,9 +373,11 @@
           </p>
           <a
             class="button"
-            href="mailto:JEThomas1130@gmail.com?subject=Portfolio%20Inquiry"
+            href="mailto:jason@jet380.com?subject=Portfolio%20Inquiry"
             >Email me</a
           >
+          <a class="button ghost" href="https://www.linkedin.com/in/jason-thomas-180873394/"
+            target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
           <a
             class="button ghost"
             href="https://github.com/jthomas380"
@@ -367,6 +385,7 @@
             rel="noopener noreferrer"
             >GitHub ↗</a
           >
+          <p><a href="mailto:jason@jet380.com">jason@jet380.com</a></p>
         </div>
       </section>
     </main>
@@ -390,6 +409,6 @@
         }),
       );
     </script>
-    <script src="componets/Matrix-rain/matrix-rain.js"></script>
+    <script src="components/Matrix-rain/matrix-rain.js"></script>
   </body>
 </html>

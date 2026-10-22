@@ -77,6 +77,9 @@ class MatrixRain {
   }
 
   initialize() {
+    // Respond when the visitor changes the motion preference.
+    this.motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    this.motionQuery.addEventListener("change", this.handleThemeChange);
     this.themeObserver = new MutationObserver(this.handleThemeChange);
 
     this.themeObserver.observe(document.documentElement, {
@@ -95,6 +98,7 @@ class MatrixRain {
   }
 
   isActive() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
     return (
       this.alwaysActive ||
       document.documentElement.classList.contains(this.activeClass)
@@ -225,6 +229,7 @@ class MatrixRain {
   destroy() {
     this.stop();
 
+    this.motionQuery.removeEventListener("change", this.handleThemeChange);
     this.themeObserver.disconnect();
 
     if (this.resizeObserver) {
