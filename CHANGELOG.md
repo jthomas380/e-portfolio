@@ -10,3 +10,4 @@
 - Polish heading hierarchy, spacing, keyboard focus, and reduced-motion behavior.
 - Reuse optimized WebP screenshots, favicon, and link-preview image from the earlier review branch.
 - Keep the existing logo and matrix rain; add search metadata and local preview documentation.
+- Show the B.S. graduation month (Aug 2016) in Education.
