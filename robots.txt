@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jet380.com/sitemap.xml
