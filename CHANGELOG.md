@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-23 · Jason E. Thomas (North & Loom)
+
+- Rename the Business Projects group to Business and Personal Projects and use the résumé note wording.
+- Add North & Loom (shop.jet380.com) to the Business and Personal Projects list and move its card after the nfprullc.com website, before the Frontend Simplified training projects.
+- Use the résumé bullet for the North & Loom card description.
+- Replace the downloadable résumé PDF with the updated version that includes North & Loom (same file name and path).
+
 ## 2026-10-23 · Jason E. Thomas
 
 - Point the Mortgage Lender live link to mortage.jet380.com, the address that is live.
