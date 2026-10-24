@@ -4,6 +4,7 @@
 
 - Replace the downloadable résumé PDF with the updated version that lists Databases (PostgreSQL, MySQL) on its own skills line (same file name and path).
 - Refresh the résumé PDF again with the latest version, which lists Stripe in the That Doggone Cart tech line and notes that the site takes real card payments through Stripe Checkout.
+- Add Stripe to the That Doggone Cart tags and use the résumé wording about real card payments through Stripe Checkout in its card description.
 
 ## 2026-10-23 · Jason E. Thomas (North & Loom)
 
