@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-23 · Jason E. Thomas (Databases line)
+
+- Replace the downloadable résumé PDF with the updated version that lists Databases (PostgreSQL, MySQL) on its own skills line (same file name and path).
+
 ## 2026-10-23 · Jason E. Thomas (North & Loom)
 
 - Rename the Business Projects group to Business and Personal Projects and use the résumé note wording.
