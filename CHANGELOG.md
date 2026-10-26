@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 · Jason E. Thomas (VS Code and GitHub Copilot)
+
+- Add VS Code (Visual Studio Code) to the skills list.
+- Add GitHub Copilot to the AI-assisted development skill line.
+- Replace the downloadable résumé PDF with the updated version whose Tools line lists VS Code with GitHub Copilot (same file name and path).
+
 ## 2026-10-23 · Jason E. Thomas (Databases line)
 
 - Replace the downloadable résumé PDF with the updated version that lists Databases (PostgreSQL, MySQL) on its own skills line (same file name and path).
