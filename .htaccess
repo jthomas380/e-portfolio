@@ -1,1 +1,6 @@
 Options -Indexes
+
+# Internal docs for developers. Not part of the website.
+<FilesMatch "^(AGENTS|STANDARDS)\.md$">
+  Require all denied
+</FilesMatch>

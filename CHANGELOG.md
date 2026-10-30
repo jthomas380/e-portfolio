@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-29 · Jason E. Thomas (Synaptrix AI rules and standards)
+
+- Add AGENTS.md: the firm rules every coding agent follows in this repo (Synaptrix AI Standards, parts library first, JavaScript only, manual entry, big readable phone first screens, changelog, commit author, no secrets, test database only, PRs merged only on Jason's OK).
+- Add STANDARDS.md: the Synaptrix AI Standards, the exact tool versions every project uses and the major upgrade rule.
+- The .htaccess now blocks AGENTS.md and STANDARDS.md from the web.
+- No site changes.
+
 ## 2026-10-26 · Jason E. Thomas (VS Code and GitHub Copilot)
 
 - Add VS Code (Visual Studio Code) to the skills list.
